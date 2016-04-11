@@ -1,0 +1,106 @@
+
+.navbar-default{ 
+  background-color:#eee;
+  color:#555;
+   border-bottom: 3px solid #555;
+      border-top: 3px solid #555;
+      margin-bottom: 0px;
+    
+}
+
+.nav-sidebar{
+  background-color: #555;
+  color: white;
+
+}
+
+.nav-sidebar2{
+  background-color: #555;
+  height: 500px;
+  color: white;
+
+}
+
+.active{
+  background-color: #555;
+  color:black;
+}
+
+.picturesize{
+  width:300px;
+  height: 300px;
+}
+
+.jumbotron{
+    background-color:#D4D8D1;
+    color:#555;
+    float:left;
+    margin-top: 100px;
+    width: 500px;
+}
+
+.float {
+    float:left;
+    height: 1000px;
+    width: 200px;
+    background: #696969;
+    color: #FFFFFF;
+}
+
+.float2 {
+    float:left;
+    height: 130px;
+    width: 84%;
+    background: #FFD700;
+}
+
+.float3 {
+    float:left;
+    height: 70px;
+    width: 100%;
+    background: #FFDAB9;
+    vertical-align:middle;
+    border-bottom: 3px solid #555;
+}
+
+.right{
+  font-family: Lato;
+  font-size: 14px;
+  height: 250px;
+  width: 800px;
+  float:left;
+  padding-bottom: 100px;
+  padding-left: 200px;
+
+}
+.left{
+ font-family: Lato;
+  font-size: 14px;
+  height: 250px;
+  width: 250px;
+  float:left;
+  padding-bottom: 100px;
+  padding-left: 100px;
+  text-align: left;
+}
+
+.matchHeight{
+  padding-bottom: 30px;
+}
+
+.middle {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* Adds borders for tabs */
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 7px;
+}
+.nav-tabs {
+    margin-bottom: 0;
+}

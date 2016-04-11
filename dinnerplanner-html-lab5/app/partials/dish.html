@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="css/main.css">
+<ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
+{{ status }}
+<div id="dish" ng-controller="DishCtrl">
+<div id="dishDetailView" ng-show="ready">
+	<div class="col-md-4 col-xs-height">
+		<div id="dishName">
+			<h1>{{ActiveDish.Title}}</h1>
+		</div>
+		<div id="dishDescription">
+			{{ActiveDish.Description}}
+		</div>
+		<div id="dishPicture">
+			<img ng-src="{{ActiveDish.ImageURL}}" width="300px" height="300px" class="img-thumbnail">
+		</div>
+		<div id="dishInstruction">
+			{{ActiveDish.Instructions}}
+		</div>
+		<br>
+		<div id="backButton">
+			<a href="#/search"><button class="btn btn-warning" ng-click="back()">Back to select dish</button></a>
+		</div>
+	</div>
+</div>
+
+<div id="dishIngredientView" ng-show="ready" class="ingre">
+	<div class="col-sm-4 col-md-4 col-xs-height" id="ingredients">
+		<h4>Ingredients for {{ getNumberOfGuests() }} people</h4>
+		<div id="numberofguests">
+			<button ng-controller="DinnerCtrl" ng-click="setNumberOfGuest(1)" id="plusGuest" class="btn">
+      		<span class="glyphicon glyphicon-plus"></span></button>
+     		<button ng-controller="DinnerCtrl" ng-click="setNumberOfGuest(-1)" id="minusGuest" class="btn">
+        	<span class="glyphicon glyphicon-minus"></span></button>
+        </div>
+        <table id="ingredientTable" class="table table-hover">
+        		<thead><tr><th>Name</th><th>quantity</th><th>price</th></tr></thead>
+        		<tbody ng-controller="DinnerCtrl">
+        			<tr ng-repeat="ingredient in ActiveDish.Ingredients">
+        				<td>{{ingredient.Name}}</td>
+        				<td>{{ getNumberOfGuests() * ingredient.MetricQuantity + ingredient.MetricUnit }}</td>
+        				<td>{{ getNumberOfGuests() * ingredient.MetricQuantity.toFixed(1) }}</td>
+           			</tr>
+	        	</tbody>
+        </table>
+			<div class='row'>
+				<div align='right'><h4> Total {{ getprice(ActiveDish).toFixed(1) }} SEK</h4></div>
+				<div class='col-md-4'>
+					<a align="center" href="#/search"><button class='btn btn-warning btn-small btn-block' ng-click="confirmDish()">Confirm dish</button></a>
+				</div>
+
+			</div>
+	</div>
+</div>
+</div>

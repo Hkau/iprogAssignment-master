@@ -1,0 +1,25 @@
+<ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
+<div id="search" class="float2">
+  <h4>&nbsp;SELECT DISH</h4>
+  <HR>
+    <div class="row">
+    	<div class="col-lg-6">
+    		<input ng-model="query" class="form-control" placeholder="Search for..." type="text submit" id="searchBar"/>
+
+			<button type="submit" class="btn btn-warning" id="searchButton" ng-click="search(query)">Search</button>
+    	</div>
+        <div class="col-lg-6">
+        	<select ng-model="selecter" class="form-control" ng-click="search_select(query)"><option>main dish</option><option>appetizer</option><option>dessert</option></select>
+        </div>
+    </div>
+</div>
+    <p>{{status}}</p>
+<div ng-repeat="dish in dishes">
+	<div class="col-sm-2 col-md-2">
+		<div id="dishImage">
+		<img width="150" height="150" class="img-rounded" ng-src="{{dish.ImageURL120}}">
+		</div>
+		<div style="font-weight:bold; height:40px;">{{dish.Title}}</div>
+		<a ng-href="#/dish/{{dish.RecipeID}}" class="btn btn-warning btn-small selectDishButton">select dish</a>
+	</div>
+</div>

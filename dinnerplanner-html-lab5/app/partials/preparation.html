@@ -1,0 +1,33 @@
+<div class="float3" id="myDinnerHeader">
+		<div class="col-md-4">
+			<h2 id="myDinner">My Dinner: {{ numberOfGuests }} people</h2>
+		</div>
+		<div align="right">
+			<a href="#/search"><button class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left"></span>Go back and edit dinner</button></a>
+		</div>
+</div>
+<div id="dinnerPreparationView">
+	<div id="preparations">
+		<div ng-repeat="dish in menu">
+			<div class="row" id="dishDetailsRow">
+				<div class="left">
+					<img ng-src="{{dish.ImageURL}}" class="img-rounded" width="200" height="200">
+				</div>
+				<div class="left">
+					<h3>
+						<strong>
+						<p>{{dish.Title}}</p>
+						</strong>
+					</h3>
+					<div class="limit_box">
+					{{dish.Description}}
+					</div>
+				</div>
+				<div class="right">
+					<h4><strong> Preparation </strong></h4>
+					<div class="instructions">{{dish.Instructions}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+<div id="dinnerbar" class="float">
+	<div id="guestDetails">
+		<h3>My Dinner</h3>
+		<div>Number of guests: {{getNumberOfGuests()}}</div>
+		<div align="right">
+		 <button ng-click="setNumberOfGuest(1)" id="plusGuest" class="btn">
+          	<span class="glyphicon glyphicon-plus"></span></button>
+         <button ng-click="setNumberOfGuest(-1)" id="minusGuest" class="btn">
+            <span class="glyphicon glyphicon-minus"></span></button>
+        </div>
+    </div>
+    <br>
+	<div id="dishDetails">
+    	<table id="totalTable" class="table table-hover" style="width:100%">
+        	<thead><tr><td>Dish Name</td> <td>Cost</td></tr></thead>
+        	<tbody>
+        		<tr ng-repeat="dish in fullMenu">
+        			<td>{{dish.Title}}</td>
+        			<td>{{ getprice(dish.RecipeID).toFixed(1) }}</td>
+        			<td class='glyphicon glyphicon-remove' ng-click="removeDish(dish.RecipeID)"></td>
+        		</tr>
+    		</tbody>
+    	</table>
+        <HR>
+        <div align="right"><span id="totalPrice">{{ totalCost().toFixed(1) }} SEK</span></div>
+        <br>
+        <div align="center">
+        	<a href="#/overview" id="confirm" type="button" class="btn btn-primary">Confirm Dinner</a>
+        </div>
+	</div>
+</div>
